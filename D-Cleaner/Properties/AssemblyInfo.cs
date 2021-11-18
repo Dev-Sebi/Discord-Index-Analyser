@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("D-Cleaner")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("StorTrec AG")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("D-Cleaner")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
