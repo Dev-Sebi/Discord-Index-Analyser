@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("StorTrec AG")]
 [assembly: AssemblyProduct("D-Cleaner")]
-[assembly: AssemblyCopyright("Copyright © StorTrec AG 2021")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
