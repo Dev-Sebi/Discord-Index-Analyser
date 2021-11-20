@@ -365,26 +365,34 @@ namespace D_Cleaner
         private void button1_Click_2(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Do you really want to clear your Downloads Folder?", "Are you sure about that?", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-
-                string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\Downloads";
-
-                DirectoryInfo directory = new DirectoryInfo(path);
-
-                foreach (FileInfo file in directory.GetFiles())
+                if (dialogResult == DialogResult.Yes)
                 {
-                    file.Delete();
+
+                    string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\Downloads";
+
+                    DirectoryInfo directory = new DirectoryInfo(path);
+
+                    foreach (FileInfo file in directory.GetFiles())
+                    {
+                        file.Delete();
+                    }
+
+                    foreach (DirectoryInfo dir in directory.GetDirectories())
+                    {
+                        dir.Delete(true);
+                    }
+                    MessageBox.Show("Successfully cleared Downloads folder!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                foreach (DirectoryInfo dir in directory.GetDirectories())
+                else if (dialogResult == DialogResult.No)
                 {
-                    dir.Delete(true);
+                    return;
                 }
             }
-            else if (dialogResult == DialogResult.No)
+            catch(Exception ex)
             {
-                return;
+                MessageBox.Show("An Error Accured: \n\n" + ex, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

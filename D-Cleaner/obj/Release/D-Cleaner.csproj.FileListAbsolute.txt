@@ -8,3 +8,13 @@ H:\D-Cleaner\D-Cleaner\D-Cleaner\obj\Release\D-Cleaner.csproj.CoreCompileInputs.
 H:\D-Cleaner\D-Cleaner\D-Cleaner\obj\Release\D-Cleaner.exe
 H:\D-Cleaner\D-Cleaner\D-Cleaner\obj\Release\D-Cleaner.pdb
 H:\D-Cleaner\D-Cleaner\D-Cleaner\obj\Release\D-Cleaner.csproj.AssemblyReference.cache
+H:\Discord Index Analyser\D-Cleaner\bin\Release\D-Cleaner.exe.config
+H:\Discord Index Analyser\D-Cleaner\bin\Release\D-Cleaner.exe
+H:\Discord Index Analyser\D-Cleaner\bin\Release\D-Cleaner.pdb
+H:\Discord Index Analyser\D-Cleaner\obj\Release\D-Cleaner.csproj.AssemblyReference.cache
+H:\Discord Index Analyser\D-Cleaner\obj\Release\D_Cleaner.main.resources
+H:\Discord Index Analyser\D-Cleaner\obj\Release\D_Cleaner.Properties.Resources.resources
+H:\Discord Index Analyser\D-Cleaner\obj\Release\D-Cleaner.csproj.GenerateResource.cache
+H:\Discord Index Analyser\D-Cleaner\obj\Release\D-Cleaner.csproj.CoreCompileInputs.cache
+H:\Discord Index Analyser\D-Cleaner\obj\Release\D-Cleaner.exe
+H:\Discord Index Analyser\D-Cleaner\obj\Release\D-Cleaner.pdb
