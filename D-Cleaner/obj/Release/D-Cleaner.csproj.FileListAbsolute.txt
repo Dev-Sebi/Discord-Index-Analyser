@@ -7,3 +7,4 @@ H:\D-Cleaner\D-Cleaner\D-Cleaner\obj\Release\D-Cleaner.csproj.GenerateResource.c
 H:\D-Cleaner\D-Cleaner\D-Cleaner\obj\Release\D-Cleaner.csproj.CoreCompileInputs.cache
 H:\D-Cleaner\D-Cleaner\D-Cleaner\obj\Release\D-Cleaner.exe
 H:\D-Cleaner\D-Cleaner\D-Cleaner\obj\Release\D-Cleaner.pdb
+H:\D-Cleaner\D-Cleaner\D-Cleaner\obj\Release\D-Cleaner.csproj.AssemblyReference.cache

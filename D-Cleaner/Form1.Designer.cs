@@ -51,6 +51,7 @@
             this.open_GitHub = new System.Windows.Forms.Button();
             this.open_youtube = new System.Windows.Forms.Button();
             this.quicklinks = new System.Windows.Forms.Label();
+            this.clear_downloads_folder = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -298,12 +299,23 @@
             this.quicklinks.TabIndex = 21;
             this.quicklinks.Text = "Quick Links:";
             // 
+            // clear_downloads_folder
+            // 
+            this.clear_downloads_folder.Location = new System.Drawing.Point(266, 399);
+            this.clear_downloads_folder.Name = "clear_downloads_folder";
+            this.clear_downloads_folder.Size = new System.Drawing.Size(143, 23);
+            this.clear_downloads_folder.TabIndex = 22;
+            this.clear_downloads_folder.Text = "Clear Downloads Folder";
+            this.clear_downloads_folder.UseVisualStyleBackColor = true;
+            this.clear_downloads_folder.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1264, 430);
+            this.Controls.Add(this.clear_downloads_folder);
             this.Controls.Add(this.quicklinks);
             this.Controls.Add(this.open_youtube);
             this.Controls.Add(this.open_GitHub);
@@ -361,6 +373,7 @@
         private System.Windows.Forms.Button open_GitHub;
         private System.Windows.Forms.Button open_youtube;
         private System.Windows.Forms.Label quicklinks;
+        private System.Windows.Forms.Button clear_downloads_folder;
     }
 }
 

@@ -354,12 +354,38 @@ namespace D_Cleaner
 
         private void open_GitHub_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://githubs.com/");
+            System.Diagnostics.Process.Start("http://github.com/");
         }
 
         private void open_youtube_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://youtube.com/");
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you really want to clear your Downloads Folder?", "Are you sure about that?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                string path = Environment.GetEnvironmentVariable("USERPROFILE") + @"\Downloads";
+
+                DirectoryInfo directory = new DirectoryInfo(path);
+
+                foreach (FileInfo file in directory.GetFiles())
+                {
+                    file.Delete();
+                }
+
+                foreach (DirectoryInfo dir in directory.GetDirectories())
+                {
+                    dir.Delete(true);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
         }
     }
 }
