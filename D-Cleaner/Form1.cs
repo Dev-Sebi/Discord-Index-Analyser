@@ -69,7 +69,7 @@ namespace D_Cleaner
 
         private void info_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Made by: Sebi" + "\n" + "Version: 1.0.0", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Made by: Sebi" + "\n" + "Version: 1.0.2", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void scan_index_Click(object sender, EventArgs e)
@@ -393,6 +393,31 @@ namespace D_Cleaner
             catch(Exception ex)
             {
                 MessageBox.Show("An Error Accured: \n\n" + ex, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void scan_discord_packages_Click(object sender, EventArgs e)
+        {
+            {
+                string filecontent = "{\"name\":\"discord_desktop_core\",\"version\":\"0.0.0\",\"private\":\"true\",\"main\":\"index.js\"}";
+
+                string path = Environment.GetEnvironmentVariable("LocalAppData") + "/Discord/app-1.0.9003/modules/discord_desktop_core-1/discord_desktop_core/package.json";
+
+                if (!File.Exists(path))
+                {
+                    MessageBox.Show("No Files Found!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                string text = File.ReadAllText(@path);
+                if (text != filecontent)
+                {
+                    MessageBox.Show("Modified Packages found! \n\n" + text, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("No Modifications Found! \neverything looks alright!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }

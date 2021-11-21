@@ -52,6 +52,7 @@
             this.open_youtube = new System.Windows.Forms.Button();
             this.quicklinks = new System.Windows.Forms.Label();
             this.clear_downloads_folder = new System.Windows.Forms.Button();
+            this.scan_discord_packages = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // 
             this.welcome_user.AutoSize = true;
             this.welcome_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome_user.Location = new System.Drawing.Point(12, 9);
+            this.welcome_user.Location = new System.Drawing.Point(910, 6);
             this.welcome_user.Name = "welcome_user";
             this.welcome_user.Size = new System.Drawing.Size(134, 24);
             this.welcome_user.TabIndex = 0;
@@ -309,12 +310,23 @@
             this.clear_downloads_folder.UseVisualStyleBackColor = true;
             this.clear_downloads_folder.Click += new System.EventHandler(this.button1_Click_2);
             // 
+            // scan_discord_packages
+            // 
+            this.scan_discord_packages.Location = new System.Drawing.Point(12, 16);
+            this.scan_discord_packages.Name = "scan_discord_packages";
+            this.scan_discord_packages.Size = new System.Drawing.Size(130, 23);
+            this.scan_discord_packages.TabIndex = 23;
+            this.scan_discord_packages.Text = "Scan Discord Packages";
+            this.scan_discord_packages.UseVisualStyleBackColor = true;
+            this.scan_discord_packages.Click += new System.EventHandler(this.scan_discord_packages_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1264, 430);
+            this.Controls.Add(this.scan_discord_packages);
             this.Controls.Add(this.clear_downloads_folder);
             this.Controls.Add(this.quicklinks);
             this.Controls.Add(this.open_youtube);
@@ -374,6 +386,7 @@
         private System.Windows.Forms.Button open_youtube;
         private System.Windows.Forms.Label quicklinks;
         private System.Windows.Forms.Button clear_downloads_folder;
+        private System.Windows.Forms.Button scan_discord_packages;
     }
 }
 
