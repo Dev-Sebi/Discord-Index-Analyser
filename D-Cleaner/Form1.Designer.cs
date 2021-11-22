@@ -312,7 +312,7 @@
             // 
             // scan_discord_packages
             // 
-            this.scan_discord_packages.Location = new System.Drawing.Point(12, 16);
+            this.scan_discord_packages.Location = new System.Drawing.Point(12, 12);
             this.scan_discord_packages.Name = "scan_discord_packages";
             this.scan_discord_packages.Size = new System.Drawing.Size(130, 23);
             this.scan_discord_packages.TabIndex = 23;

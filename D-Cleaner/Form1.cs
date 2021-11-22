@@ -182,12 +182,16 @@ namespace D_Cleaner
 
         private void scan_webhooks_Click(object sender, EventArgs e)
         {
-            string pattern = @"https:\/\/discord(?:app)?\.com\/api\/webhooks\/([^\/]+)\/.{1,68}";
+            string pattern = @"https:\/\/(?:canary.)?discord(?:app)?\.com\/api\/webhooks\/([^\/]+)\/.{1,68}";
             RegexOptions options = RegexOptions.Multiline | RegexOptions.IgnoreCase;
             MatchCollection matches = Regex.Matches(tb1.Text, pattern, options);
-            if(tb1.Text.Contains("PirateStealer"))
+            if (tb1.Text.Contains("PirateStealer"))
             {
                 MessageBox.Show("Suspicious Words Found:\nPirateStealer", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (tb1.Text.Contains("GlockFA"))
+            {
+                MessageBox.Show("Suspicious Words Found:\nGlockFA", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             if (matches.Count == 0)
             {
