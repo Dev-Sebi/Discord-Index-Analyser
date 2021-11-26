@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.welcome_user = new System.Windows.Forms.Label();
             this.info = new System.Windows.Forms.Button();
             this.tb1 = new System.Windows.Forms.RichTextBox();
@@ -53,6 +54,7 @@
             this.quicklinks = new System.Windows.Forms.Label();
             this.clear_downloads_folder = new System.Windows.Forms.Button();
             this.scan_discord_packages = new System.Windows.Forms.Button();
+            this.scan_file = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -177,7 +179,7 @@
             this.liveupdate.AutoSize = true;
             this.liveupdate.Checked = true;
             this.liveupdate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.liveupdate.Location = new System.Drawing.Point(770, 49);
+            this.liveupdate.Location = new System.Drawing.Point(770, 18);
             this.liveupdate.Name = "liveupdate";
             this.liveupdate.Size = new System.Drawing.Size(113, 17);
             this.liveupdate.TabIndex = 11;
@@ -312,7 +314,7 @@
             // 
             // scan_discord_packages
             // 
-            this.scan_discord_packages.Location = new System.Drawing.Point(12, 12);
+            this.scan_discord_packages.Location = new System.Drawing.Point(12, 16);
             this.scan_discord_packages.Name = "scan_discord_packages";
             this.scan_discord_packages.Size = new System.Drawing.Size(130, 23);
             this.scan_discord_packages.TabIndex = 23;
@@ -320,12 +322,24 @@
             this.scan_discord_packages.UseVisualStyleBackColor = true;
             this.scan_discord_packages.Click += new System.EventHandler(this.scan_discord_packages_Click);
             // 
+            // scan_file
+            // 
+            this.scan_file.Enabled = false;
+            this.scan_file.Location = new System.Drawing.Point(770, 45);
+            this.scan_file.Name = "scan_file";
+            this.scan_file.Size = new System.Drawing.Size(113, 23);
+            this.scan_file.TabIndex = 24;
+            this.scan_file.Text = "Scan File";
+            this.scan_file.UseVisualStyleBackColor = true;
+            this.scan_file.Click += new System.EventHandler(this.scan_file_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1264, 430);
+            this.Controls.Add(this.scan_file);
             this.Controls.Add(this.scan_discord_packages);
             this.Controls.Add(this.clear_downloads_folder);
             this.Controls.Add(this.quicklinks);
@@ -349,6 +363,7 @@
             this.Controls.Add(this.info);
             this.Controls.Add(this.welcome_user);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1284, 473);
             this.MinimumSize = new System.Drawing.Size(1284, 473);
             this.Name = "main";
@@ -387,6 +402,7 @@
         private System.Windows.Forms.Label quicklinks;
         private System.Windows.Forms.Button clear_downloads_folder;
         private System.Windows.Forms.Button scan_discord_packages;
+        private System.Windows.Forms.Button scan_file;
     }
 }
 

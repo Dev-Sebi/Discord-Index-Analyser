@@ -69,7 +69,7 @@ namespace D_Cleaner
 
         private void info_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Made by: Sebi" + "\n" + "Version: 1.0.2", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Made by: Sebi" + "\n" + "Version: 1.0.5", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void scan_index_Click(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace D_Cleaner
         private void delete_webhook_Click(object sender, EventArgs e)
         {
             string url = webhook_delete.Text;
-            string pattern = @"https:\/\/discord(?:app)?\.com\/api\/webhooks\/([^\/]+)\/.{1,68}";
+            string pattern = @"https:\/\/(?:canary.)?discord(?:app)?\.com\/api\/webhooks\/([^\/]+)\/.{1,68}";
             RegexOptions options = RegexOptions.Multiline | RegexOptions.IgnoreCase;
             MatchCollection matches = Regex.Matches(webhook_delete.Text, pattern, options);
             if (matches.Count <= 0)
@@ -147,7 +147,7 @@ namespace D_Cleaner
                     if (response != null)
                     {
                         var encoding = ASCIIEncoding.ASCII;
-                        using (var reader = new System.IO.StreamReader(response.GetResponseStream(), encoding))
+                        using (var reader = new StreamReader(response.GetResponseStream(), encoding))
                         {
                             string responseText = reader.ReadToEnd();
                             MessageBox.Show(responseText, "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -349,6 +349,14 @@ namespace D_Cleaner
             {
                 tb1.Text = "";
             }
+            if(liveupdate.Checked)
+            {
+                scan_file.Enabled = false;
+            }
+            else if (!liveupdate.Checked)
+            {
+                scan_file.Enabled = true;
+            }
         }
 
         private void open_virustotal_Click(object sender, EventArgs e)
@@ -422,6 +430,65 @@ namespace D_Cleaner
                 {
                     MessageBox.Show("No Modifications Found! \neverything looks alright!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+        private void scan_file_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.FilterIndex = 0;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string filedir = openFileDialog1.FileName;
+                byte[] bufferArray = File.ReadAllBytes(filedir);
+                string base64EncodedString = Convert.ToBase64String(bufferArray);
+                tb1.Text = base64EncodedString;
+
+                DialogResult dialogResult = MessageBox.Show("Search File for Webhooks?", "Completed scanning...", MessageBoxButtons.YesNo);
+                try
+                {
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        string pattern = @"https:\/\/(?:canary.)?discord(?:app)?\.com\/api\/webhooks\/([^\/]+)\/.{1,68}";
+                        RegexOptions options = RegexOptions.Multiline | RegexOptions.IgnoreCase;
+                        MatchCollection matches = Regex.Matches(tb1.Text, pattern, options);
+                        if (tb1.Text.Contains("PirateStealer"))
+                        {
+                            MessageBox.Show("Suspicious Words Found:\nPirateStealer", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        if (tb1.Text.Contains("GlockFA"))
+                        {
+                            MessageBox.Show("Suspicious Words Found:\nGlockFA", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        if (matches.Count == 0)
+                        {
+                            MessageBox.Show("0 Webhooks found!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            string hooks = "";
+                            foreach (Match match in matches)
+                            {
+                                hooks = hooks + match.Value + "\n\n";
+                            }
+                            webhooks_found.Text = hooks;
+                        }
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Oh no! Our Application... iTs BrOkEn \n\n" + ex, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                return;
             }
         }
     }
